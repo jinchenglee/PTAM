@@ -13,10 +13,12 @@ LINKFLAGS += $(shell pkg-config --libs opencv)
 
 # add gstreamer dependencies
 COMPILEFLAGS += $(shell pkg-config --cflags glib-2.0) $(shell pkg-config --cflags gstreamer-0.10)
-LINKFLAGS += $(shell pkg-config --libs glib-2.0) $(shell pkg-config --libs gstreamer-0.10) -lgstapp-0.10
+#<<JC>>LINKFLAGS += $(shell pkg-config --libs glib-2.0) $(shell pkg-config --libs gstreamer-0.10) -lgstapp-0.10
+LINKFLAGS += $(shell pkg-config --libs glib-2.0) -lGL -lGLU 
 
 # Edit this line to change video source
-VIDEOSOURCE = VideoSource_Linux_OpenCV.o
+VIDEOSOURCE = VideoSource_Linux_V4L.o
+#<<JC>>VIDEOSOURCE = VideoSource_Linux_OpenCV.o
 #VIDEOSOURCE = VideoSource_Linux_Gstreamer_File.o
 
 OBJECTS=	main.o\

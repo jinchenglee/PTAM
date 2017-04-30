@@ -18,6 +18,9 @@
 #include <fstream>
 #include <fcntl.h>
 
+//<<JC>> added below header file
+#include <unistd.h>
+
 
 using namespace CVD;
 using namespace std;
